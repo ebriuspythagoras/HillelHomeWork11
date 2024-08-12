@@ -1,11 +1,10 @@
 ﻿using System;
 namespace HomeWork11
 {
-    public class Actor
+    class Actor
     {
-        public Actor()
-        {
-        }
+        public string Name { get; set; }
+        public DateTime Birthdate { get; set; }
     }
 }
 

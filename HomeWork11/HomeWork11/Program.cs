@@ -18,11 +18,14 @@ var data = new List<object>() {
   "Leonardo DiCaprio"
 };
 
-Console.WriteLine(String.Join(", ",data.Except(data.OfType<ArtObject>()).ToArray()));
+//1. Виведіть усі елементи, крім ArtObjects
+//Console.WriteLine(String.Join(", ",data.Except(data.OfType<ArtObject>()).ToArray()));
+
+//2. Виведіть імена всіх акторів
+Console.WriteLine(String.Join(",",data.OfType<Film>().SelectMany(l => l.Actors).Select(a => a.Name)));
 
 /*
- * 1. Виведіть усі елементи, крім ArtObjects
-2. Виведіть імена всіх акторів
+ * 
 3. Виведіть кількість акторів, які народилися в серпні
 4. Виведіть два найстаріших імена акторів
 5. Вивести кількість книг на авторів

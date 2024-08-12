@@ -22,7 +22,10 @@ var data = new List<object>() {
 //Console.WriteLine(String.Join(", ",data.Except(data.OfType<ArtObject>()).ToArray()));
 
 //2. Виведіть імена всіх акторів
-Console.WriteLine(String.Join(",",data.OfType<Film>().SelectMany(l => l.Actors).Select(a => a.Name)));
+//Console.WriteLine(String.Join(",",data.OfType<Film>().SelectMany(l => l.Actors).Select(a => a.Name)));
+
+//3. 3. Виведіть кількість акторів, які народилися в серпні
+Console.WriteLine(String.Join(",", data.OfType<Film>().SelectMany(a =>a.Actors).Where(a => a.Birthdate.Month == 8).Select(a => a.Name).Distinct()));
 
 /*
  * 

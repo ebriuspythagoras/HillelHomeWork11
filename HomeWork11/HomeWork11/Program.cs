@@ -24,13 +24,14 @@ var data = new List<object>() {
 //2. Виведіть імена всіх акторів
 //Console.WriteLine(String.Join(",",data.OfType<Film>().SelectMany(l => l.Actors).Select(a => a.Name)));
 
-//3. 3. Виведіть кількість акторів, які народилися в серпні
-Console.WriteLine(String.Join(",", data.OfType<Film>().SelectMany(a =>a.Actors).Where(a => a.Birthdate.Month == 8).Select(a => a.Name).Distinct()));
+//3. Виведіть кількість акторів, які народилися в серпні
+//Console.WriteLine(String.Join(",", data.OfType<Film>().SelectMany(a =>a.Actors).Where(a => a.Birthdate.Month == 8).Select(a => a.Name).Distinct()));
+
+//4. Виведіть два найстаріших імена акторів
+Console.WriteLine(String.Join(",",data.OfType<Film>().SelectMany(l=>l.Actors).OrderBy(a => a.Birthdate).Take(2).Select(a => a.Name)));
 
 /*
  * 
-3. Виведіть кількість акторів, які народилися в серпні
-4. Виведіть два найстаріших імена акторів
 5. Вивести кількість книг на авторів
 6. Виведіть кількість книг на одного автора та фільмів на одного режисера
 7. Виведіть, скільки різних букв використано в іменах усіх акторів

@@ -38,13 +38,16 @@ var data = new List<object>() {
 //Console.WriteLine(String.Join(",", data.OfType<ArtObject>().GroupBy(a=>a.Author).Select( a =>new { Author = a.Key, Count = a.Count()}).ToList()));
 
 //7. Виведіть, скільки різних букв використано в іменах усіх акторів
-Console.WriteLine(String.Concat(data.OfType<Film>().SelectMany(a=>a.Actors).SelectMany(a=>a.Name)).Split(' ').SelectMany(c=>c).Distinct().Count());
+//Console.WriteLine(String.Concat(data.OfType<Film>().SelectMany(a=>a.Actors).SelectMany(a=>a.Name)).Split(' ').SelectMany(c=>c).Distinct().Count());
+
+//8. Виведіть назви всіх книг, упорядковані за іменами авторів і кількістю сторінок
+
+Console.WriteLine(String.Join(",\n",data.OfType<Book>().OrderBy(b=>b.Author).ThenBy(b=>b.Pages).Select(b => b.Name).ToArray()));
 
 /*
  * 
 
-7. Виведіть, скільки різних букв використано в іменах усіх акторів
-8. Виведіть назви всіх книг, упорядковані за іменами авторів і кількістю сторінок
+
 9. Виведіть ім'я актора та всі фільми за участю цього актора
 10. Виведіть суму загальної кількості сторінок у всіх книгах і всі значення int у всіх послідовностях у даних
 11. Отримати словник з ключем - автор книги, значенням - список авторських книг

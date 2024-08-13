@@ -1,4 +1,5 @@
-﻿using HomeWork11;
+﻿using System.Linq;
+using HomeWork11;
 
 var data = new List<object>() {
   "Hello",
@@ -28,11 +29,12 @@ var data = new List<object>() {
 //Console.WriteLine(String.Join(",", data.OfType<Film>().SelectMany(a =>a.Actors).Where(a => a.Birthdate.Month == 8).Select(a => a.Name).Distinct()));
 
 //4. Виведіть два найстаріших імена акторів
-Console.WriteLine(String.Join(",",data.OfType<Film>().SelectMany(l=>l.Actors).OrderBy(a => a.Birthdate).Take(2).Select(a => a.Name)));
+//Console.WriteLine(String.Join(",",data.OfType<Film>().SelectMany(l=>l.Actors).OrderBy(a => a.Birthdate).Take(2).Select(a => a.Name)));
 
+//5. Вивести кількість книг на авторів
+Console.WriteLine(String.Join(",",data.OfType<Book>().GroupBy(b => b.Author).Select(b => new { Autor = b.Key, CountOfBooks = b.Count()}).ToList()));
 /*
  * 
-5. Вивести кількість книг на авторів
 6. Виведіть кількість книг на одного автора та фільмів на одного режисера
 7. Виведіть, скільки різних букв використано в іменах усіх акторів
 8. Виведіть назви всіх книг, упорядковані за іменами авторів і кількістю сторінок

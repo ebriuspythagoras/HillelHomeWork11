@@ -32,7 +32,11 @@ var data = new List<object>() {
 //Console.WriteLine(String.Join(",",data.OfType<Film>().SelectMany(l=>l.Actors).OrderBy(a => a.Birthdate).Take(2).Select(a => a.Name)));
 
 //5. Вивести кількість книг на авторів
-Console.WriteLine(String.Join(",",data.OfType<Book>().GroupBy(b => b.Author).Select(b => new { Autor = b.Key, CountOfBooks = b.Count()}).ToList()));
+//Console.WriteLine(String.Join(",",data.OfType<Book>().GroupBy(b => b.Author).Select(b => new { Autor = b.Key, CountOfBooks = b.Count()}).ToList()));
+
+//6. Виведіть кількість книг на одного автора та фільмів на одного режисера
+//Console.WriteLine(String.Join(",", data.OfType<ArtObject>().GroupJoin(data.OfType<ArtObject>(), a => a.GetType(), b => b.GetType(),(a,b)=> new { A = a.GetType().ToString(), C = b.GroupBy(a=>a.Author).Count()}).GroupBy(a=>a.A).Select(a=>a.Count()).ToList()));
+Console.WriteLine(String.Join(",", data.OfType<ArtObject>().GroupBy(a=>a.Author).Select( a =>new { Author = a.Key, Count = a.Count()}).ToList()));
 /*
  * 
 6. Виведіть кількість книг на одного автора та фільмів на одного режисера

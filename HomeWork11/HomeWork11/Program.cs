@@ -35,11 +35,14 @@ var data = new List<object>() {
 //Console.WriteLine(String.Join(",",data.OfType<Book>().GroupBy(b => b.Author).Select(b => new { Autor = b.Key, CountOfBooks = b.Count()}).ToList()));
 
 //6. Виведіть кількість книг на одного автора та фільмів на одного режисера
-//Console.WriteLine(String.Join(",", data.OfType<ArtObject>().GroupJoin(data.OfType<ArtObject>(), a => a.GetType(), b => b.GetType(),(a,b)=> new { A = a.GetType().ToString(), C = b.GroupBy(a=>a.Author).Count()}).GroupBy(a=>a.A).Select(a=>a.Count()).ToList()));
-Console.WriteLine(String.Join(",", data.OfType<ArtObject>().GroupBy(a=>a.Author).Select( a =>new { Author = a.Key, Count = a.Count()}).ToList()));
+//Console.WriteLine(String.Join(",", data.OfType<ArtObject>().GroupBy(a=>a.Author).Select( a =>new { Author = a.Key, Count = a.Count()}).ToList()));
+
+//7. Виведіть, скільки різних букв використано в іменах усіх акторів
+Console.WriteLine(String.Concat(data.OfType<Film>().SelectMany(a=>a.Actors).SelectMany(a=>a.Name)).Split(' ').SelectMany(c=>c).Distinct().Count());
+
 /*
  * 
-6. Виведіть кількість книг на одного автора та фільмів на одного режисера
+
 7. Виведіть, скільки різних букв використано в іменах усіх акторів
 8. Виведіть назви всіх книг, упорядковані за іменами авторів і кількістю сторінок
 9. Виведіть ім'я актора та всі фільми за участю цього актора

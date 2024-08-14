@@ -43,10 +43,18 @@ var data = new List<object>() {
 //8. Виведіть назви всіх книг, упорядковані за іменами авторів і кількістю сторінок
 //Console.WriteLine(String.Join(",\n",data.OfType<Book>().OrderBy(b=>b.Author).ThenBy(b=>b.Pages).Select(b => b.Name).ToArray()));
 
-//!!!!!9. Виведіть ім'я актора та всі фільми за участю цього актора
-//Console.WriteLine(String.Join(",",
-//data.OfType<Film>().SelectMany(a => a.Actors, (film, actor) => new { ACTOR = actor.Name, FILM = film.Name }
-//)));
+//9. Виведіть ім'я актора та всі фільми за участю цього актора
+Console.WriteLine(
+   String.Join(",", from actor in data.OfType<Film>().SelectMany(f => f.Actors)
+                    group actor by actor.Name into g
+                    select new
+                    {
+                        ACTOR = g.Key,
+                        FILMS = String.Join(",", data.OfType<Film>()
+                                                     .Where(f => f.Actors.Contains(g.First()))
+                                                     .Select(f => f.Name))
+                    }
+));
 
 //10.Виведіть суму загальної кількості сторінок у всіх книгах і всі значення int у всіх послідовностях у даних
 //Console.WriteLine(String.Concat("Total pages: ",data.OfType<Book>().Select(b => b.Pages).Sum().ToString(),", ints in lists: ", String.Join(", ",data.OfType<List<int>>().SelectMany(i => i.OfType<int>()).ToList())));
@@ -55,7 +63,7 @@ var data = new List<object>() {
 //Console.WriteLine(String.Join(", ",data.OfType<Book>().GroupBy(b=>b.Author).ToDictionary(g => "AUTHOR: " + g.Key, g=>"BOOKS: \""+String.Join(", ",g.Select(b=>b.Name+"\"").ToList()))));
 
 //12. Вивести всі фільми "Метт Деймон", за винятком фільмів з акторами, імена яких представлені в даних у вигляді рядків
-Console.WriteLine(
+/*Console.WriteLine(
     String.Join(",",
     (from film in data.OfType<Film>()
     from actor in film.Actors
@@ -67,5 +75,5 @@ Console.WriteLine(
         where data.OfType<string>().Any(a => a == actor.Name)
         select film.Name
         )
-    ));
+    ));*/
 

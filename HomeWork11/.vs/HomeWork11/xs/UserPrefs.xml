@@ -1,4 +1,23 @@
 ﻿<Properties StartupConfiguration="{1B0716FD-6FE8-4EF8-A118-B031EC38A410}|Default">
-  <MonoDevelop.Ide.ItemProperties.HomeWork11 FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HomeWork11 PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HomeWork11/Program.cs">
+    <Files>
+      <File FileName="HomeWork11/Program.cs" Line="38" Column="43" />
+      <File FileName="HomeWork11/Actor.cs" Line="8" Column="6" />
+      <File FileName="HomeWork11/ArtObject.cs" Line="13" Column="1" />
+      <File FileName="HomeWork11/Film.cs" Line="8" Column="6" />
+      <File FileName="HomeWork11/Book.cs" Line="9" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

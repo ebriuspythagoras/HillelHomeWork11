@@ -1,0 +1,15 @@
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/bin/Debug/net8.0/HomeWork11
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/bin/Debug/net8.0/HomeWork11.deps.json
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/bin/Debug/net8.0/HomeWork11.runtimeconfig.json
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/bin/Debug/net8.0/HomeWork11.dll
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/bin/Debug/net8.0/HomeWork11.pdb
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/HomeWork11.GeneratedMSBuildEditorConfig.editorconfig
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/HomeWork11.AssemblyInfoInputs.cache
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/HomeWork11.AssemblyInfo.cs
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/HomeWork11.csproj.CoreCompileInputs.cache
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/HomeWork11.sourcelink.json
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/HomeWork11.dll
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/refint/HomeWork11.dll
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/HomeWork11.pdb
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/HomeWork11.genruntimeconfig.cache
+/Users/volodimir/HillelHomeWork11/HomeWork11/HomeWork11/obj/Debug/net8.0/ref/HomeWork11.dll

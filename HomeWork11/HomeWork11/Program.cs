@@ -52,11 +52,20 @@ var data = new List<object>() {
 //Console.WriteLine(String.Concat("Total pages: ",data.OfType<Book>().Select(b => b.Pages).Sum().ToString(),", ints in lists: ", String.Join(", ",data.OfType<List<int>>().SelectMany(i => i.OfType<int>()).ToList())));
 
 //11.Отримати словник з ключем - автор книги, значенням - список авторських книг
-Console.WriteLine(String.Join(", ",data.OfType<Book>().GroupBy(b=>b.Author).ToDictionary(g => "AUTHOR: " + g.Key, g=>"BOOKS: \""+String.Join(", ",g.Select(b=>b.Name+"\"").ToList()))));
-/*
- * 
+//Console.WriteLine(String.Join(", ",data.OfType<Book>().GroupBy(b=>b.Author).ToDictionary(g => "AUTHOR: " + g.Key, g=>"BOOKS: \""+String.Join(", ",g.Select(b=>b.Name+"\"").ToList()))));
 
-12. Вивести всі фільми "Метт Деймон", за винятком фільмів з акторами, імена яких представлені в даних у вигляді рядків
-*/
-
+//12. Вивести всі фільми "Метт Деймон", за винятком фільмів з акторами, імена яких представлені в даних у вигляді рядків
+Console.WriteLine(
+    String.Join(",",
+    (from film in data.OfType<Film>()
+    from actor in film.Actors
+         where actor.Name == "Matt Damon"
+         select film.Name)
+         .Except(
+        from film in data.OfType<Film>()
+        from actor in film.Actors
+        where data.OfType<string>().Any(a => a == actor.Name)
+        select film.Name
+        )
+    ));
 

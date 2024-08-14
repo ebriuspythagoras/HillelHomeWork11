@@ -49,15 +49,13 @@ var data = new List<object>() {
 //)));
 
 //10.Виведіть суму загальної кількості сторінок у всіх книгах і всі значення int у всіх послідовностях у даних
-Console.WriteLine(
-    String.Concat("Total pages: ",data.OfType<Book>().Select(b => b.Pages).Sum().ToString(),", ints in lists: ",
-    String.Join(", ",data.OfType<List<int>>().SelectMany(i => i.OfType<int>()).ToList())
-    ));
+//Console.WriteLine(String.Concat("Total pages: ",data.OfType<Book>().Select(b => b.Pages).Sum().ToString(),", ints in lists: ", String.Join(", ",data.OfType<List<int>>().SelectMany(i => i.OfType<int>()).ToList())));
+
+//11.Отримати словник з ключем - автор книги, значенням - список авторських книг
+Console.WriteLine(String.Join(", ",data.OfType<Book>().GroupBy(b=>b.Author).ToDictionary(g => "AUTHOR: " + g.Key, g=>"BOOKS: \""+String.Join(", ",g.Select(b=>b.Name+"\"").ToList()))));
 /*
  * 
 
-10. Виведіть суму загальної кількості сторінок у всіх книгах і всі значення int у всіх послідовностях у даних
-11. Отримати словник з ключем - автор книги, значенням - список авторських книг
 12. Вивести всі фільми "Метт Деймон", за винятком фільмів з акторами, імена яких представлені в даних у вигляді рядків
 */
 
